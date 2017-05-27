@@ -11,7 +11,7 @@ var financeCharts = function() {
     Morris.Bar({
         element: 'financesChart',
         data: [
-            { years: 0y, candidates: 28 },
+            { years: 0, candidates: 28 },
             { years: 2, candidates: 20 },
             { years: 3, candidates: 44 },
             { years: 4, candidates: 44 },
@@ -25,7 +25,7 @@ var financeCharts = function() {
         ],
         xkey: 'years',
         ykeys: ['candidates'],
-        labels: ['tot_candidates'],
+        labels: ['#candidates'],
         hideHover: 'auto'
     });
 }
@@ -45,7 +45,7 @@ var growthCharts = function() {
         ],
         xkey: 'company',
         ykeys: ['candidates'],
-        labels: ['tot_candidates'],
+        labels: ['#candidates'],
         hideHover: 'auto'
     }
   );
@@ -63,7 +63,7 @@ var growthCharts = function() {
           ],
           xkey: 'city',
           ykeys: ['candidates'],
-          labels: ['tot_candidates'],
+          labels: ['#candidates'],
           hideHover: 'auto'
       }
     );
@@ -78,7 +78,7 @@ var growthCharts = function() {
             ],
             xkey: 'nation',
             ykeys: ['candidates'],
-            labels: ['tot_candidates'],
+            labels: ['#candidates'],
             hideHover: 'auto'
         }
       );
