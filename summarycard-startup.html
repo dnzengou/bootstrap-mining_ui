@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="yavro">
+  <link rel="icon" href="img/favicons/favicon.ico">
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+  <link rel="manifest" href="img/favicons/manifest.json">
+  <meta name="theme-color" content="#ffffff">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Important: you'll only need one of the Bootcards CSS files below for every platform -->
+
+    <!-- Bootcards CSS for iOS: -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/css/bootcards-ios.min.css"> -->
+
+    <!-- Bootcards CSS for Android: -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/css/bootcards-android.min.css"> -->
+
+    <!-- Bootcards CSS for desktop: -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/css/bootcards-desktop.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.css">
+
+    <!-- Charts-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+    <style>
+    body {
+    background-image: url("img/bg.png");
+    background-color: #fff;
+    background-repeat: repeat-x;
+  }
+  h3 {
+    text-align: center;
+  }
+  </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="panel panel-default bootcards-summary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="color:#20aa85">Mining Results <code> (source: annunci.csv) </code></h3>
+                    </div>
+                    <!--- finances <= experience -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-4">
+                                <a class="bootcards-summary-item" href="#finances" onclick="comp('#finances')">
+                                    <i class="fa fa-3x fa-signal"></i>
+                                    <h4>Experience
+                                        <!--<span class="label label-info">21</span>-->
+                                    </h4>
+                                </a>
+                            </div>
+                            <!-- growth <= progress -->
+                            <div class="col-xs-6 col-sm-4">
+                                <a class="bootcards-summary-item" href="#growth" onclick="comp('#growth')">
+                                    <i class="fa fa-3x fa-building-o"></i>
+                                    <h4>Company
+                                        <!--<span class="label label-info">75%</span>-->
+                                    </h4>
+                                </a>
+                            </div>
+                            <!-- growth <= progress -->
+                            <div class="col-xs-6 col-sm-4">
+                                <a class="bootcards-summary-item" href="#growth1" onclick="comp('#growth1')">
+                                    <i class="fa fa-3x fa-map-marker"></i>
+                                    <h4>City
+                                        <!--<span class="label label-info">75%</span>-->
+                                    </h4>
+                                </a>
+                            </div>
+                            <!-- growth <= progress -->
+                            <div class="col-xs-6 col-sm-4">
+                                <a class="bootcards-summary-item" href="#growth2" onclick="comp('#growth2')">
+                                    <i class="fa fa-3x fa-globe"></i>
+                                    <h4>Nation
+                                        <!--<span class="label label-info">75%</span>-->
+                                    </h4>
+                                </a>
+                            </div>
+                            <!-- growth <= progress -->
+                            <div class="col-xs-6 col-sm-4">
+                                <a class="bootcards-summary-item" href="#growth3" onclick="comp('#growth3')">
+                                    <i class="fa fa-3x fa-clock-o"></i>
+                                    <h4>Hiring time
+                                        <!--<span class="label label-info">75%</span>-->
+                                    </h4>
+                                </a>
+                            </div>
+                            <!-- growth <= progress -->
+                            <div class="col-xs-6 col-sm-4">
+                                <a class="bootcards-summary-item" href="#growth4" onclick="comp('#growth4')">
+                                    <i class="fa fa-3x fa-line-chart"></i>
+                                    <h4>Predictive
+                                        <!--<span class="label label-info">75%</span>-->
+                                    </h4>
+                                </a>
+                            </div>
+                            <!--- clients <= users -->
+                            <div class="col-xs-6 col-sm-4">
+                                <a class="bootcards-summary-item" href="#members" onclick="comp('#members')">
+                                    <i class="fa fa-3x fa-users"></i>
+                                    <h4>candidates
+                                        <!--<span class="label label-warning">5</span>-->
+                                    </h4>
+                                </a>
+                            </div>
+                            <!--- files => projects -->
+                            <div class="col-xs-6 col-sm-4">
+                                <a class="bootcards-summary-item" href="#projects" onclick="comp('#projects')">
+                                    <i class="fa fa-3x fa-folder-open-o"></i>
+                                    <h4>Projects
+                                        <!--<span class="label label-info">3</span>-->
+                                    </h4>
+                                </a>
+                            </div>
+                            <!--<div class="col-xs-6 col-sm-4">
+                                <a class="bootcards-summary-item" href="#notes" onclick="comp('#notes')">
+                                    <i class="fa fa-3x fa-clipboard"></i>
+                                    <h4>Notes
+                                        <span class="label label-warning">4</span>
+                                    </h4>
+                                </a>
+                            </div>-->
+                            <div class="col-xs-6 col-sm-4">
+                                <a class="bootcards-summary-item" href="#socialmedia" onclick="comp('#socialmedia')">
+                                    <i class="fa fa-3x fa-share-alt"></i>
+                                    <h4>Social Media
+                                        <!--<span class="label label-warning">4</span>-->
+                                    </h4>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel panel-default bootcards-chart cards hidden" id="finances">
+                        <div class="bootcards-chart-canvas" id="financesChart"></div>
+                    </div>
+                    <div class="panel panel-default bootcards-chart cards hidden" id="growth">
+                        <div class="bootcards-chart-canvas" id="growthChart"></div>
+                    </div>
+                    <div class="panel panel-default bootcards-chart cards hidden" id="growth1">
+                        <div class="bootcards-chart-canvas" id="growthChart1"></div>
+                    </div>
+                    <div class="panel panel-default bootcards-chart cards hidden" id="growth2">
+                        <div class="bootcards-chart-canvas" id="growthChart2"></div>
+                    </div>
+                    <div class="panel panel-default bootcards-chart cards hidden" id="growth3">
+                        <div class="bootcards-chart-canvas" id="growthChart3"></div>
+                    </div>
+                    <div class="panel panel-default bootcards-chart cards hidden" id="growth4">
+                        <div class="bootcards-chart-canvas" id="growthChart4"></div>
+                    </div>
+                    <div class="table-responsive cards hidden" id="members">
+                        <!--<table class="table table-hover">
+                            <thead>
+                                <tr class="active">
+                                    <th>Name</th>
+                                    <th>Projects</th>
+                                    <th>Paid</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="team-member-details_seth-smith.html">Seth Smith</a></td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="team-member-details_jasmine-tulipe.html">Jasmine Tulipe</a></td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="team-member-details_kevin-sanders.html">Kevin Sanders</a></td>
+                                    <td>3</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="team-member-details_marc-ronald.html">Marc Ronald</a></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="team-member-details_jane-doe.html">Jane Doe</a></td>
+                                    <td>6</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total</strong></td>
+                                    <td><strong>13</strong></td>
+                                    <td><strong>26</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>-->
+                    </div>
+                    <div class="table-responsive cards hidden" id="projects">
+                        <!--<table class="table table-hover">
+                            <thead>
+                                <tr class="active">
+                                    <th>Projects</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="summarycard-project.html">1</a></td>
+                                    <td>7</td>
+                                    <td>The platform for the gig economy 3.0</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="http://kampuscopycenter.com/artchain/index.html">2</a></td>
+                                    <td>5</td>
+                                    <td>When Art meets Blockchain </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>11</td>
+                                    <td>Bringing plant therapy to the people</td>
+                                </tr>
+                            </tbody>
+                        </table>-->
+                    </div>
+                    <div class="table-responsive cards hidden" id="notes">
+                        <!--<table class="table table-hover">
+                            <thead>
+                                <tr class="active">
+                                    <th>Notes</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="demo.html">Demo</a></td>
+                                    <td>File</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="documents.html">Document</a></td>
+                                    <td>File</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="image.html">Image</a></td>
+                                    <td>Media</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="description.html">Description</a></td>
+                                    <td>Text</td>
+                                </tr>
+                                <tr>
+                                    <td><a href="tasks.html">Tasks</a></td>
+                                    <td>Todo</td>
+                                </tr>
+                            </tbody>
+                        </table>-->
+                    </div>
+                    <div class="table-responsive cards hidden" id="socialmedia">
+                        <!--<table class="table table-hover">
+                            <thead>
+                                <tr class="active">
+                                    <th>Channel</th>
+                                    <th>Shared</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Facebook</td>
+                                    <td>37</td>
+                                </tr>
+                                <tr>
+                                    <td>Twitter</td>
+                                    <td>21</td>
+                                </tr>
+                                <tr>
+                                    <td>Slack</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>Telegram</td>
+                                    <td>19</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total</strong></td>
+                                    <td><strong>84</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>-->
+                    </div>
+
+                    <div class="panel-footer">
+                        <small>&copy; <a href="#"> mining experiments</a> designed by <a href="https://m_me/HeyImDesire">desireyavro.com</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <!-- Bootstrap and Bootcards JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootcards/1.1.1/js/bootcards.min.js"></script>
+
+    <!--Charts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+    <!--Custom JS-->
+    <script src="js/summarycard.js"></script>
+
+</body>
+
+</html>
